@@ -5,22 +5,48 @@
  */
 function mp_stacks_mil_additional_items_array($items_array) {
 	
-	//Create slice of array using the first item
-	$first_three_options = array_slice($items_array, 0, 3, true);
+	$counter = 0;
 	
-	$return_items_array = $first_three_options;
+	//Loop through passed-in metabox fields
+	foreach ( $items_array as $item ){
+		
+		//If the current loop is for the brick_main_image_link_url
+		if ($item['field_id'] == 'brick_main_image_link_url'){
+			
+			//Split the array after the array with the field containing 'brick_main_image_link_url'
+			$options_prior = array_slice($items_array, 0, $counter+1, true);
+			$options_after = array_slice($items_array, $counter+1, true);
+			
+			break;
+						
+		}
+		
+		//Increment Counter
+		$counter = $counter + 1;
 	
-	//Add new items to array after first three items
-    array_push($return_items_array,
-      array(
-			'field_id'			=> 'brick_main_image_open_type',
-			'field_title' 	=> __( 'Link Open Type', 'mp_stacks'),
-			'field_description' 	=> 'Enter the URL the above image will go to when clicked. EG: http://mylink.com',
-			'field_type' 	=> 'select',
-			'field_value' => '',
-			'field_select_values' => array( 'lightbox' => __( 'Open in Lightbox', 'mp_stacks' ), 'parent' => __( 'Open in current Window/Tab', 'mp_stacks' ), 'blank' => __( 'Open in New Window/Tab', 'mp_stacks' ) )
-		)
-	);
+	}
+	
+	if ( !empty($options_prior) ){
+		
+		//Add the first options to the return array
+		$return_items_array = $options_prior;
+	
+		//Add new option to array  for main image lightbox
+		array_push($return_items_array,
+		  array(
+				'field_id'			=> 'brick_main_image_open_type',
+				'field_title' 	=> __( 'Link Open Type', 'mp_stacks'),
+				'field_description' 	=> 'Enter the URL the above image will go to when clicked. EG: http://mylink.com',
+				'field_type' 	=> 'select',
+				'field_value' => '',
+				'field_select_values' => array( 'lightbox' => __( 'Open in Lightbox', 'mp_stacks' ), 'parent' => __( 'Open in current Window/Tab', 'mp_stacks' ), 'blank' => __( 'Open in New Window/Tab', 'mp_stacks' ) )
+			)
+		);
+		
+		//Add all fields that came after
+		array_push($return_items_array, $options_after[0]);
+		
+	}
 		
     return $return_items_array;
 }

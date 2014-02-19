@@ -3,7 +3,7 @@
 Plugin Name: MP Stacks + Main Image Lightbox
 Plugin URI: http://moveplugins.com
 Description: Easily make a Brick's image popup YouTube or Vimeo videos, images, or webpages when it gets clicked.
-Version: 1.0.0.0
+Version: 1.0.0.1
 Author: Move Plugins
 Author URI: http://moveplugins.com
 Text Domain: mp_stacks_mil
