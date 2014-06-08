@@ -30,18 +30,22 @@ function mp_stacks_mil_additional_items_array($items_array) {
 		
 		//Add the first options to the return array
 		$return_items_array = $options_prior;
-	
-		//Add new option to array  for main image lightbox
-		array_push($return_items_array,
-		  array(
+		
+		$main_image_lightbox_options = array(
 				'field_id'			=> 'brick_main_image_open_type',
 				'field_title' 	=> __( 'Link Open Type', 'mp_stacks'),
 				'field_description' 	=> 'Enter the URL the above image will go to when clicked. EG: http://mylink.com',
 				'field_type' 	=> 'select',
 				'field_value' => '',
 				'field_select_values' => array( 'lightbox' => __( 'Open in Lightbox', 'mp_stacks' ), 'parent' => __( 'Open in current Window/Tab', 'mp_stacks' ), 'blank' => __( 'Open in New Window/Tab', 'mp_stacks' ) )
-			)
-		);
+			);
+		
+		//Globalize the and populate the mp_stacks_googlefonts_items_array (do this before filter hooks are run)
+		global $global_mp_stacks_main_image_lightbox_items_array;
+		$global_mp_stacks_main_image_lightbox_items_array = $main_image_lightbox_options;
+	
+		//Add new option to array  for main image lightbox
+		array_push($return_items_array, $main_image_lightbox_options	);
 		
 		//Add all fields that came after
 		array_push($return_items_array, $options_after[0]);

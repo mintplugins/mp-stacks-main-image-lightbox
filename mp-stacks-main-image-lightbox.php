@@ -1,21 +1,21 @@
 <?php
 /*
 Plugin Name: MP Stacks + Main Image Lightbox
-Plugin URI: http://moveplugins.com
+Plugin URI: http://mintplugins.com
 Description: Easily make a Brick's image popup YouTube or Vimeo videos, images, or webpages when it gets clicked.
-Version: 1.0.0.1
-Author: Move Plugins
-Author URI: http://moveplugins.com
+Version: 1.0.0.2
+Author: Mint Plugins
+Author URI: http://mintplugins.com
 Text Domain: mp_stacks_mil
 Domain Path: languages
 License: GPL2
 */
 
-/*  Copyright 2014  Phil Johnston  (email : phil@moveplugins.com)
+/*  Copyright 2014  Phil Johnston  (email : phil@mintplugins.com)
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License, version 2, as 
-    published by the Free Software Move Plugins Core.
+    published by the Free Software Mint Plugins Core.
 
     This program is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
@@ -24,7 +24,7 @@ License: GPL2
 
     You should have received a copy of the GNU General Public License
     along with this program; if not, write to the Free Software
-    Move Plugins Core, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+    Mint Plugins Core, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
 /*
@@ -143,6 +143,13 @@ function mp_stacks_mil_include_files(){
 		 * Modify Metabox for Main Image
 		 */
 		require( MP_STACKS_MIL_PLUGIN_DIR . 'includes/metaboxes/mp-stacks-mil/mp-stacks-mil.php' );
+		
+		/**
+		 * Functions which assist with the creation of templates using this add-on
+		 */
+		if ( function_exists('mp_stacks_developer_textdomain') ){
+			require( MP_STACKS_MIL_PLUGIN_DIR . 'includes/misc-functions/stack-template-functions.php' );
+		}
 		
 		/**
 		 * Filters which modify the image on output

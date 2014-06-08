@@ -1,10 +1,10 @@
 === MP Stacks + Main Image Lightbox ===
 Contributors: johnstonphilip
-Donate link: http://moveplugins.com/
+Donate link: http://mintplugins.com/
 Tags: message bar, header
 Requires at least: 3.6
 Tested up to: 3.8.1
-Stable tag: 1.0.0.1
+Stable tag: 1.0.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -26,13 +26,16 @@ This section describes how to install the plugin and get it working.
 
 == Frequently Asked Questions ==
 
-See full instructions at http://moveplugins.com/doc/mp-stacks
+See full instructions at http://mintplugins.com/doc/mp-stacks
 
 == Screenshots ==
 
 
 == Changelog ==
 
+
+= 1.0.0.2 = June 8, 2014
+* Move to Mint
 
 = 1.0.0.1 = February 19, 2014
 * Updated Plugin Installer
