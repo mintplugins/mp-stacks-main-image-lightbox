@@ -3,8 +3,8 @@ Contributors: johnstonphilip
 Donate link: http://mintplugins.com/
 Tags: message bar, header
 Requires at least: 3.6
-Tested up to: 3.8.1
-Stable tag: 1.0.0.2
+Tested up to: 4.1
+Stable tag: 1.0.0.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -33,6 +33,8 @@ See full instructions at http://mintplugins.com/doc/mp-stacks
 
 == Changelog ==
 
+= 1.0.0.3 = February 1, 2015
+* All functions from this add-on have moved to MP Stacks core. This plugin is no longer needed and this update simple removes all functions from running.
 
 = 1.0.0.2 = June 8, 2014
 * Move to Mint

@@ -3,7 +3,7 @@
 Plugin Name: MP Stacks + Main Image Lightbox
 Plugin URI: http://mintplugins.com
 Description: Easily make a Brick's image popup YouTube or Vimeo videos, images, or webpages when it gets clicked.
-Version: 1.0.0.2
+Version: 1.0.0.3
 Author: Mint Plugins
 Author URI: http://mintplugins.com
 Text Domain: mp_stacks_mil
@@ -34,7 +34,7 @@ License: GPL2
 */
 // Plugin version
 if( !defined( 'MP_STACKS_MIL_VERSION' ) )
-	define( 'MP_STACKS_MIL_VERSION', '1.0.0.0' );
+	define( 'MP_STACKS_MIL_VERSION', '1.0.0.3' );
 
 // Plugin Folder URL
 if( !defined( 'MP_STACKS_MIL_PLUGIN_URL' ) )
@@ -142,19 +142,23 @@ function mp_stacks_mil_include_files(){
 		/**
 		 * Modify Metabox for Main Image
 		 */
-		require( MP_STACKS_MIL_PLUGIN_DIR . 'includes/metaboxes/mp-stacks-mil/mp-stacks-mil.php' );
+		//require( MP_STACKS_MIL_PLUGIN_DIR . 'includes/metaboxes/mp-stacks-mil/mp-stacks-mil.php' );
 		
 		/**
-		 * Functions which assist with the creation of templates using this add-on
+		 * Add this add on to the list of Active MP Stacks Add Ons
 		 */
 		if ( function_exists('mp_stacks_developer_textdomain') ){
-			require( MP_STACKS_MIL_PLUGIN_DIR . 'includes/misc-functions/stack-template-functions.php' );
+			function mp_stacks_main_image_lightbox_add_active( $required_add_ons ){
+				$required_add_ons['mp_stacks_main_image_lightbox'] = 'MP Stacks + Main Image Lightbox';
+				return $required_add_ons;
+			}
+			//add_filter( 'mp_stacks_active_add_ons', 'mp_stacks_main_image_lightbox_add_active' );
 		}
 		
 		/**
 		 * Filters which modify the image on output
 		 */
-		require( MP_STACKS_MIL_PLUGIN_DIR . 'includes/misc-functions/mil-actions.php' );
+		//require( MP_STACKS_MIL_PLUGIN_DIR . 'includes/misc-functions/mil-actions.php' );
 		
 	}
 }
